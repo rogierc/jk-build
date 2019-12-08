@@ -12,30 +12,39 @@
  *    (teslanet.nl) Rogier Cobben - initial creation
  ******************************************************************************/
 
-package nl.teslanet.test.jkbuild;
+package nl.teslanet.test.jkbuild.test;
+
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+import nl.teslanet.test.jkbuild.JkBuild;
 
 
 /**
  * The Class JkBuild
  *
  */
-public class JkBuild
+
+public class JkBuildTest
 {
     /**
      * Default constructor
      */
-    public JkBuild()
+    public JkBuildTest()
     {
         //nothing to be done
     }
 
     /**
-     * Is it OK?
-     * @return true
+     * Do test
      */
-    public boolean isOk()
+    @Test
+    public void test1()
     {
-        // TODO Auto-generated method stub
-        return true;
+        JkBuild myObject= new JkBuild();
+
+        assertTrue( myObject.isOk() );
     }
 }
