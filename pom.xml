@@ -114,8 +114,8 @@
                 <configuration>
                     <username>${release.user}</username>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <useReleaseProfile>false</useReleaseProfile>
-                    <releaseProfiles>release</releaseProfiles>
+                    <useReleaseProfile>true</useReleaseProfile>
+                    <releaseProfiles>teslanet.nl</releaseProfiles>
                     <goals>deploy</goals>
                 </configuration>
             </plugin>
