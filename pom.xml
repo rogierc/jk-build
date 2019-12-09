@@ -45,8 +45,8 @@
 		<californium.version>2.0.0</californium.version>
 	</properties>
     <scm>
-        <connection>scm:git:https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/rogierc/jk-build.git</connection>
-        <developerConnection>scm:git:https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/rogierc/jk-build.git</developerConnection>
+        <connection>scm:git:https://github.com/rogierc/jk-build.git</connection>
+        <developerConnection>scm:git:https://github.com/rogierc/jk-build.git</developerConnection>
         <url>http://github.com/rogierc/jk-build/tree/master</url>
         <tag>HEAD</tag>
     </scm>           
