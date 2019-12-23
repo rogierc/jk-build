@@ -26,7 +26,6 @@ import nl.teslanet.test.jkbuild.JkBuild;
  * The Class JkBuild
  *
  */
-
 public class JkBuildTest
 {
     /**
