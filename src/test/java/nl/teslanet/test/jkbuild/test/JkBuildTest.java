@@ -15,6 +15,7 @@
 package nl.teslanet.test.jkbuild.test;
 
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -37,13 +38,28 @@ public class JkBuildTest
     }
 
     /**
-     * Do test
+     * Do test 1
      */
     @Test
     public void test1()
     {
         JkBuild myObject= new JkBuild();
 
+        assertFalse( myObject.isOk() );
+    }
+
+    /**
+     * Do test 2
+     */
+    @Test
+    public void test2()
+    {
+        JkBuild myObject= new JkBuild();
+
+        assertFalse( myObject.isOk() );
+        
+        myObject.setOk( true );
+        
         assertTrue( myObject.isOk() );
     }
 }

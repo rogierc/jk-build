@@ -21,12 +21,18 @@ package nl.teslanet.test.jkbuild;
  */
 public class JkBuild
 {
+    
+    /**
+     * the ok value
+     */
+    private boolean ok;
+    
     /**
      * Default constructor
      */
     public JkBuild()
     {
-        //nothing to be done
+        ok= false;
     }
 
     /**
@@ -35,7 +41,15 @@ public class JkBuild
      */
     public boolean isOk()
     {
-        // TODO Auto-generated method stub
-        return true;
+        return ok;
+    }
+    
+    /**
+     * Set ok
+     * @param value the new value
+     */
+    public void setOk( boolean value )
+    {
+        ok= value;
     }
 }
