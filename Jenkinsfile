@@ -13,7 +13,7 @@ pipeline
         {
             steps
             {
-                sh 'mvn --version'
+                sh 'mvn test'
             }
         }
     }
