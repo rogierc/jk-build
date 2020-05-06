@@ -9,6 +9,13 @@ pipeline
     }
     stages
     {
+        stage('clean')
+        {
+            steps
+            {
+                sh 'mvn clean'
+            }
+        }
         stage('build')
         {
             steps
