@@ -4,7 +4,7 @@ pipeline
     { 
         docker
         { 
-            image 'maven:3.3.3'
+            image 'maven:3.6.3-adoptopenjdk-8'
         }
     }
     stages
