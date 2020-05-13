@@ -10,7 +10,7 @@ pipeline
         {
             steps
             {
-                sh 'echo $HOME'
+                sh 'echo $MAVEN_OPTS'
             }
         }
         stage('clean')
