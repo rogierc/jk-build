@@ -2,10 +2,7 @@ pipeline
 {
     agent
     { 
-        docker
-        { 
-            image 'maven:3.6.3-adoptopenjdk-8'
-        }
+        dockerfile true 
     }
     stages
     {
