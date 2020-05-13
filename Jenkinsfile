@@ -10,7 +10,7 @@ pipeline
         {
             steps
             {
-                sh 'ls -l /var/maven'
+                sh 'echo $HOME'
             }
         }
         stage('clean')
