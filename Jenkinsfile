@@ -6,6 +6,13 @@ pipeline
     }
     stages
     {
+        stage('prepare')
+        {
+            steps
+            {
+                sh 'whoami'
+            }
+        }
         stage('clean')
         {
             steps
