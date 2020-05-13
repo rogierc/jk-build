@@ -39,7 +39,7 @@ pipeline
         {
             environment
             {
-                GNUPGHOME = '/var/jenkins_home'
+                GNUPGHOME = '/home/gpg/.gnupg'
             }   
             steps
             {
