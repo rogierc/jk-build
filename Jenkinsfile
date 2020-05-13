@@ -8,6 +8,7 @@ pipeline
     {
         stage('prepare')
         {
+         
             steps
             {
                 sh 'echo $MAVEN_OPTS'
@@ -36,6 +37,10 @@ pipeline
         }
         stage('deploy')
         {
+            environment
+            {
+                GNUPGHOME = '/home/gpg'
+            }   
             steps
             {
                 sh 'mvn deploy'
