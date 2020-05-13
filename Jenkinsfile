@@ -10,7 +10,7 @@ pipeline
         {
             steps
             {
-                sh 'whoami'
+                sh 'ls -l /var/maven'
             }
         }
         stage('clean')
