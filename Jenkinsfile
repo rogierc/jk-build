@@ -2,10 +2,7 @@ pipeline
 {
     agent
     { 
-        dockerfile
-        {
-            args '-v pipine_build_env:/build_env'
-        } 
+        dockerfile true
     }
     stages
     {
@@ -42,7 +39,7 @@ pipeline
         {
             environment
             {
-                GNUPGHOME = '/build_env/.gnupg'
+                GNUPGHOME = '/var/jenkins_home/.gnupg/'
             }   
             steps
             {
