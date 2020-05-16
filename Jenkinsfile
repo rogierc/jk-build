@@ -1,5 +1,9 @@
 pipeline
 {
+    environment
+    {
+        MVN_SETTINGS = credentials( 'secret-teslanet-maven-settings.xml' )
+    }
     agent
     { 
         dockerfile true
@@ -43,10 +47,7 @@ pipeline
             }   
             steps
             {
-                withMaven( mavenSettingsConfig: 'teslanet-maven-settings.xml' )
-                 {
-                    sh 'mvn deploy'
-                }
+               sh 'mvn -s $MVN_SETTINGS deploy'
             }
         }
     }
