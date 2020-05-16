@@ -43,7 +43,10 @@ pipeline
             }   
             steps
             {
-                sh 'mvn deploy'
+                withMaven( mavenSettingsConfig: 'teslanet-maven-settings.xml' )
+                 {
+                    sh 'mvn deploy'
+                }
             }
         }
     }
