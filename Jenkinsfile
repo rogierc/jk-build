@@ -14,14 +14,14 @@ pipeline
         {
             steps
             {
-                sh 'mvn clean package'
+                sh 'mvn -B clean package'
             }
         }
         stage('test')
         {
             steps
             {
-                sh 'mvn test'
+                sh 'mvn -B test'
             }
         }
         stage('install')
@@ -32,7 +32,7 @@ pipeline
             }   
             steps
             {
-               sh 'mvn -s $MVN_SETTINGS install'
+               sh 'mvn -B -s $MVN_SETTINGS install'
             }
         }
     }

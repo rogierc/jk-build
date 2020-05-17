@@ -18,6 +18,7 @@ pipeline
                sh '''
                 git config user.email "jenkins@teslanet.nl"
                 git config user.name "jenkins"
+                mvn -B -s $MVN_SETTINGS release:clean
                 '''
             }
         }
@@ -25,35 +26,35 @@ pipeline
         {
             steps
             {
-                sh 'mvn clean package'
+                sh 'mvn -B clean package'
             }
         }
         stage('test')
         {
             steps
             {
-                sh 'mvn test'
+                sh 'mvn -B test'
             }
         }
         stage('deploy')
         {
             steps
             {
-               sh 'mvn -s $MVN_SETTINGS deploy'
+               sh 'mvn -B -s $MVN_SETTINGS deploy'
             }
         }
         stage('release-prepare')
         {
             steps
             {
-               sh 'mvn -s $MVN_SETTINGS release:prepare'
+               sh 'mvn -B -s $MVN_SETTINGS release:prepare'
             }
         }
         stage('release-perform')
         {
             steps
             {
-               sh 'mvn -s $MVN_SETTINGS release:perform'
+               sh 'mvn -B -s $MVN_SETTINGS release:perform'
             }
         }
     }
