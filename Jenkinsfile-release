@@ -27,10 +27,6 @@ pipeline
         }
         stage('deploy')
         {
-            environment
-            {
-                
-            }   
             steps
             {
                sh 'mvn -s $MVN_SETTINGS deploy'
@@ -38,7 +34,6 @@ pipeline
         }
         stage('release-prepare')
         {
-  
             steps
             {
                sh 'mvn -s $MVN_SETTINGS release:prepare'
@@ -46,7 +41,6 @@ pipeline
         }
         stage('release-perform')
         {
-  
             steps
             {
                sh 'mvn -s $MVN_SETTINGS release:perform'
