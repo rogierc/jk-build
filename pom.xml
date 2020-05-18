@@ -17,7 +17,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>nl.teslanet.test</groupId>
   <artifactId>jk-build</artifactId>
-  <version>0.1.1-SNAPSHOT</version>
+  <version>0.1.2-SNAPSHOT</version>
   
       <name>${project.groupId}:${project.artifactId}</name>
 	<description>Testutils for Mule CoAP Connector</description>
