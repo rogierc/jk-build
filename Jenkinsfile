@@ -35,5 +35,16 @@ pipeline
                sh 'mvn -B -s $MVN_SETTINGS install'
             }
         }
+        stage('scan')
+        {
+            environment
+            {
+                GNUPGHOME = '/var/jenkins_home/.gnupg/'
+            }   
+            steps
+            {
+               sh 'mvn -B -s $MVN_SETTINGS sonar:sonar -Psonar -Pcoverage'
+            }
+        }
     }
 }
