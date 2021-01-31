@@ -46,7 +46,7 @@ pipeline
             }   
             steps
             {
-               sh 'mvn -B -s $MVN_SETTINGS sonar:sonar -Psonar -Pcoverage'
+               sh 'mvn -B -s $MVN_SETTINGS sonar:sonar -Pcoverage -Psonar '
             }
         }
     }
