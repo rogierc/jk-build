@@ -24,7 +24,7 @@ pipeline
         {
             steps
             {
-                sh 'mvn -B -s $MVN_SETTINGS test -Pcoverage'
+                sh 'mvn -B -s $MVN_SETTINGS test'
             }
         }
         stage('install')
@@ -46,7 +46,7 @@ pipeline
             }   
             steps
             {
-               sh 'mvn -B -s $MVN_SETTINGS sonar:sonar -Pcoverage -Psonar '
+               sh 'mvn -B -s $MVN_SETTINGS sonar:sonar'
             }
         }
     }
