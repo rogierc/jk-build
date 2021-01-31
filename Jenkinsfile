@@ -17,14 +17,14 @@ pipeline
         {
             steps
             {
-                sh 'mvn -B clean package'
+                sh 'mvn -B -s $MVN_SETTINGS clean package'
             }
         }
         stage('test')
         {
             steps
             {
-                sh 'mvn -B test'
+                sh 'mvn -B -s $MVN_SETTINGS test -Pcoverage'
             }
         }
         stage('install')
