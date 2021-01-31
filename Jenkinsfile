@@ -17,14 +17,14 @@ pipeline
         {
             steps
             {
-                sh 'mvn -B -s $MVN_SETTINGS clean package'
+                sh 'mvn -B -s $MVN_SETTINGS clean package -Psonar'
             }
         }
         stage('test')
         {
             steps
             {
-                sh 'mvn -B -s $MVN_SETTINGS test'
+                sh 'mvn -B -s $MVN_SETTINGS test -Psonar'
             }
         }
         stage('install')
@@ -35,7 +35,7 @@ pipeline
             }   
             steps
             {
-               sh 'mvn -B -s $MVN_SETTINGS install'
+               sh 'mvn -B -s $MVN_SETTINGS install -Psonar'
             }
         }
         stage('scan')
@@ -46,7 +46,7 @@ pipeline
             }   
             steps
             {
-               sh 'mvn -B -s $MVN_SETTINGS sonar:sonar'
+               sh 'mvn -B -s $MVN_SETTINGS sonar:sonar -Psonar'
             }
         }
     }
