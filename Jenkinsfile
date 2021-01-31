@@ -7,6 +7,7 @@ pipeline
     agent
     { 
         dockerfile true
+        args '--network sonar_network'
     }
     stages
     {
