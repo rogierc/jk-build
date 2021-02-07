@@ -45,6 +45,10 @@ pipeline
         }
         stage('release-prepare')
         {
+            when
+            {
+                environment name: 'DO_RELEASE', value: 'true'
+            }
             steps
             {
                sh 'mvn -B -s $MVN_SETTINGS release:prepare'
@@ -52,6 +56,10 @@ pipeline
         }
         stage('release-perform')
         {
+            when
+            {
+                environment name: 'DO_RELEASE', value: 'true'
+            }
             steps
             {
                sh 'mvn -B -s $MVN_SETTINGS release:perform'
