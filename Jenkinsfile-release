@@ -2,12 +2,7 @@ pipeline
 {
     parameters
     {
-        booleanParam 
-        (
-            defaultValue: false,
-            description: 'when true do also a release',
-            name : 'DO_RELEASE'
-        )
+        booleanParam (  name: 'DO_RELEASE',  defaultValue: false, description: 'when true do also a release' )
     }
     environment
     {
