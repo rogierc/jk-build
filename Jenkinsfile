@@ -17,6 +17,10 @@ pipeline
             args '--network sonar_network'
         }
     }
+    options
+    { 
+        buildDiscarder( logRotator(numToKeepStr: '30' ))
+    }
     stages
     {
         stage('prepare')
