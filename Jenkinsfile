@@ -21,6 +21,10 @@ pipeline
     {
         stage('prepare')
         {
+            when
+            {
+                expression { params.DO_RELEASE }
+            }
             steps
             {
                sh '''
