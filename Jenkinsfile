@@ -2,8 +2,8 @@ pipeline
 {
     parameters
     {
-        booleanParam (  name: 'DO_DEPLOY_SNAPSHOT',  defaultValue: false, description: 'when true snapshot is deployed' )
-        booleanParam (  name: 'DO_RELEASE',  defaultValue: false, description: 'when true  a release is built' )
+        booleanParam (  name: 'DEPLOY_SNAPSHOT',  defaultValue: false, description: 'when true snapshot is deployed' )
+        booleanParam (  name: 'BUILD_RELEASE',  defaultValue: false, description: 'when true  a release is built' )
     }
     environment
     {
@@ -14,6 +14,7 @@ pipeline
     { 
         dockerfile
         {
+            filename 'Dockerfile.build'
             args '--network sonar_network'
         }
     }
@@ -27,7 +28,7 @@ pipeline
         {
             when
             {
-                expression { params.DO_RELEASE }
+                expression { params.BUILD_RELEASE }
             }
             steps
             {
@@ -51,7 +52,7 @@ pipeline
             {
                 not
                 { 
-                	expression { params.DO_DEPLOY_SNAPSHOT }
+                	expression { params.DEPLOY_SNAPSHOT }
                 }
             }
             steps
@@ -63,7 +64,7 @@ pipeline
         {
             when
             {
-                expression { params.DO_DEPLOY_SNAPSHOT }
+                expression { params.DEPLOY_SNAPSHOT }
             }
              steps
             {
@@ -74,7 +75,7 @@ pipeline
         {
             when
             {
-                expression { params.DO_RELEASE }
+                expression { params.BUILD_RELEASE }
             }
             steps
             {
@@ -85,7 +86,7 @@ pipeline
         {
             when
             {
-                expression { params.DO_RELEASE }
+                expression { params.BUILD_RELEASE }
             }
             steps
             {
