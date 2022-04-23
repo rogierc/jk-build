@@ -4,14 +4,14 @@ RUN apt-get update \
     && apt-get install -y gpg \
     && apt-get clean
 
-RUN groupmod -g 800 jenkins
-RUN usermod -u 800 jenkins
 
 #create user
 ENV JENKINS_HOME /home/jenkins
 RUN mkdir "${JENKINS_HOME}"
-RUN usermod -d "${JENKINS_HOME}" jenkins
+RUN groupadd -g 800 jenkins
+RUN useradd -g 800 -u 800 -d "${JENKINS_HOME}" jenkins
 RUN chown jenkins:jenkins "${JENKINS_HOME}"
+
 VOLUME /home
 
 #set user
