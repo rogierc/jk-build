@@ -1,0 +1,23 @@
+FROM maven:3.6.3-adoptopenjdk-8
+
+RUN apt-get update \
+    && apt-get install -y gpg \
+    && apt-get clean
+
+RUN groupmod -g 800 jenkins
+RUN usermod -u 800 jenkins
+
+#create user
+ENV JENKINS_HOME /home/jenkins
+RUN mkdir "${JENKINS_HOME}"
+RUN usermod -d "${JENKINS_HOME}" jenkins
+RUN chown jenkins:jenkins "${JENKINS_HOME}"
+VOLUME /home
+
+#set user
+USER jenkins
+
+#set locale
+ENV LANG nl_NL.UTF-8
+ENV LANGUAGE nl_NL:nl
+ENV LC_ALL nl_NL.UTF-8  

@@ -14,7 +14,7 @@ pipeline
     { 
         dockerfile
         {
-            filename 'Dockerfile.build'
+            filename 'AgentDockerfile'
             args '--network sonar_network'
         }
     }
