@@ -5,24 +5,22 @@ RUN apt-get update \
     && apt-get clean
 
 
-#create user
 ENV JENKINS_HOME /home/jenkins
-ENV JENKINS_KEYS /var/lib/jenkins_keys
+
+#create user
 RUN mkdir "${JENKINS_HOME}"
-RUN mkdir "${JENKINS_KEYS}"
 RUN groupadd -g 800 jenkins
 RUN useradd -g 800 -u 800 -d "${JENKINS_HOME}" jenkins
 RUN chown jenkins:jenkins "${JENKINS_HOME}"
-RUN chown jenkins:jenkins "${JENKINS_KEYS}"
 
-VOLUME /home
+#set volumes
+VOLUME /home/jenkins
 VOLUME /var/lib/jenkins_keys
-
-RUN ln -s "${JENKINS_HOME}/.gnupg" "${JENKINS_KEYS}/.gnupg"
-
 
 #set user
 USER jenkins
+ENV JENKINS_KEYS /var/lib/jenkins_keys
+ENV GNUPGHOME = "${JENKINS_KEYS}/.gnupg"
 
 #set locale
 ENV LANG nl_NL.UTF-8

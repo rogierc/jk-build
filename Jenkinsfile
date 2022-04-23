@@ -8,7 +8,6 @@ pipeline
     environment
     {
         MVN_SETTINGS = credentials( 'secret-teslanet-maven-settings.xml' )
-        GNUPGHOME = '~/.gnupg/'
     }
     agent
     { 
