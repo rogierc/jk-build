@@ -16,7 +16,7 @@ package nl.teslanet.test.jkbuild;
 
 
 /**
- * The Class JkBuild
+ * The Class JkBuild.
  *
  */
 public class JkBuild
