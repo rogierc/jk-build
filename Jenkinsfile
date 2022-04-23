@@ -15,7 +15,7 @@ pipeline
         dockerfile
         {
             filename 'AgentDockerfile'
-            args '--network sonar_network'
+            args '--network sonar_network --volume jenkins_keys:/var/lib/jenkins_keys'
         }
     }
     options

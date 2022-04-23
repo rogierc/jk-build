@@ -7,12 +7,19 @@ RUN apt-get update \
 
 #create user
 ENV JENKINS_HOME /home/jenkins
+ENV JENKINS_KEYS /var/lib/jenkins_keys
 RUN mkdir "${JENKINS_HOME}"
+RUN mkdir "${JENKINS_KEYS}"
 RUN groupadd -g 800 jenkins
 RUN useradd -g 800 -u 800 -d "${JENKINS_HOME}" jenkins
 RUN chown jenkins:jenkins "${JENKINS_HOME}"
+RUN chown jenkins:jenkins "${JENKINS_KEYS}"
 
 VOLUME /home
+VOLUME /var/lib/jenkins_keys
+
+RUN ln -s "${JENKINS_HOME}/.gnupg" "${JENKINS_KEYS}/.gnupg"
+
 
 #set user
 USER jenkins
