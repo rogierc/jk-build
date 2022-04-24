@@ -15,7 +15,7 @@ pipeline
         dockerfile
         {
             filename 'AgentDockerfile'
-            args '--network sonar_network --volume jenkins_keys:/var/lib/jenkins_keys'
+            args '--user 800:800 --network sonar_network --volume jenkins_keys:/var/lib/jenkins_keys --volume "jenkinsagent_home:/home/jenkins --env MAVEN_CONFIG=/home/jenkins --env HOME=/home/jenkins'
         }
     }
     options
