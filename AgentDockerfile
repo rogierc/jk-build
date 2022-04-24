@@ -23,9 +23,5 @@ VOLUME /var/lib/jenkins_keys
 
 #set user
 USER jenkins
-ENV GNUPGHOME = "${JENKINS_KEYS}/.gnupg"
+ENV GNUPGHOME "${JENKINS_KEYS}/.gnupg"
 
-#set locale
-ENV LANG nl_NL.UTF-8
-ENV LANGUAGE nl_NL:nl
-ENV LC_ALL nl_NL.UTF-8  
