@@ -8,7 +8,6 @@ ENV JENKINS_HOME /home/jenkins
 ENV JENKINS_KEYS /var/lib/jenkins_keys
 
 #set user
-USER jenkins
 ENV GNUPGHOME "${JENKINS_KEYS}/.gnupg"
 
 # Set user and group
