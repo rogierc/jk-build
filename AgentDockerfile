@@ -1,8 +1,5 @@
 FROM maven:3.8.3-adoptopenjdk-8-openj9
 
-# Switch to root user
-USER root # <--- Usually you won't be needed it - Depends on base image
-
 RUN apt-get update \
     && apt-get install -y gpg \
     && apt-get clean
