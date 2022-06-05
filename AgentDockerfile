@@ -20,6 +20,7 @@ RUN useradd -u ${uid} -g ${group} -s /bin/sh -m ${user} # <--- the '-m' create a
 
 #set volumes
 VOLUME /home/jenkins
+VOLUME /home/jenkins/.m2/repository
 VOLUME /var/lib/jenkins_keys
 
 # Switch to user
