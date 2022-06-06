@@ -30,14 +30,7 @@ pipeline
             	deleteDir()
            	}
         }
-        
-        stage ('Checkout')
-        {
-            steps
-            {
-            	checkout scm
-            }
-        } 
+m
         stage('prepare')
         {
             when
