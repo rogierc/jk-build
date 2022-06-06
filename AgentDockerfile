@@ -21,7 +21,7 @@ RUN groupadd -g ${gid} ${group} \
 # Switch to user
 USER ${uid}:${gid}
 
-RUN mkdir /home/jenkins/.m2/repository \
+RUN mkdir /home/jenkins/.m2 \
     && mkdir /home/jenkins/.m2/repository
 
 #set volumes
