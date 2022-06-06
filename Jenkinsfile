@@ -23,6 +23,15 @@ pipeline
     }
     stages
     {
+        stage ('Clean')
+        {
+            deleteDir()
+        }
+        
+        stage ('Checkout')
+        {
+            checkout scm 
+        } 
         stage('prepare')
         {
             when
