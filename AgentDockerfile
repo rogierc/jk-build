@@ -6,6 +6,7 @@ RUN apt-get update \
     && apt-get clean
 
 ENV JENKINS_HOME /home/jenkins
+ENV MAVEN_CONFIG /home/jenkins/.m2
 ENV JENKINS_KEYS /var/lib/jenkins_keys
 
 #set user
@@ -22,8 +23,8 @@ RUN groupadd -g ${gid} ${group} \
 # Switch to user
 USER ${uid}:${gid}
 
-RUN mkdir /home/jenkins/.m2 \
-    && mkdir /home/jenkins/.m2/repository
+RUN mkdir ${MAVEN_CONFIG} \
+    && mkdir ${MAVEN_CONFIG}/repository
 
 #set volumes
 VOLUME /home/jenkins
