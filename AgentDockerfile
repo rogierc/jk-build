@@ -7,7 +7,8 @@ RUN apk add --update --no-cache gpg maven
 # Set user and group
 ARG uid=800
 ARG gid=800
-RUN deluser ${user} && delgroup ${group}
+RUN deluser ${user} 
+RUN delgroup ${group}
 RUN addgroup -g ${gid} ${group}
 RUN adduser -h /home/${user} -u ${uid} -G ${group} -D ${user}
 RUN chwown -R ${uid}:${gid} /home/${user}
