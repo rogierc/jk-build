@@ -15,6 +15,7 @@ pipeline
         dockerfile
         {
             filename 'AgentDockerfile'
+            additionalBuildArgs  '--build-arg uid=800 --build-arg gid=800 '
             args  ' --network sonar_network --volume jenkins_keys:/var/lib/jenkins_keys --volume "jenkinsagent_m2repo:/home/jenkins/.m2/repository '
         }
     }
