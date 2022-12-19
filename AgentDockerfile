@@ -13,7 +13,7 @@ RUN deluser ${user}
 # RUN delgroup ${group}
 RUN addgroup -g ${gid} ${group}
 RUN adduser -h /home/${user} -u ${uid} -G ${group} -D ${user}
-RUN chwown -R ${uid}:${gid} /home/${user}
+RUN chown -R ${uid}:${gid} /home/${user}
 
 USER ${user}
 
