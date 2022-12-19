@@ -4,9 +4,7 @@ FROM jenkins/agent:4.13.3-2-alpine3.16-jdk8
 ARG uid=800
 ARG gid=800
 
-RUN apt-get update \
-    && apt-get install -y gpg maven \
-    && apt-get clean
+RUN apk add --update --no-cache gpg maven
 
 ENV JENKINS_HOME /home/jenkins
 ENV MAVEN_CONFIG /home/jenkins/.m2
