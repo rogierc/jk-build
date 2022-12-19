@@ -22,6 +22,7 @@ ENV MAVEN_CONFIG=/home/${user}/.m2
 # create dirs
 RUN ls -l -n -R /home
 RUN id
+RUN env
 RUN mkdir ${MAVEN_CONFIG} 
 RUN mkdir ${MAVEN_CONFIG}/repository
 
