@@ -2,7 +2,7 @@ FROM jenkins/agent:4.13.3-2-alpine3.16-jdk8
 
 # Install additional packages
 USER root
-RUN apk add --update --no-cache gpg maven
+RUN apk add --update --no-cache gpg-agent maven
 
 # Set user and group
 ARG user=jenkins
