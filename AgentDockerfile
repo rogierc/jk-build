@@ -5,15 +5,15 @@ USER root
 RUN apk add --update --no-cache gpg gpg-agent maven
 
 # Set user and group
-# ARG user=jenkins
-# ARG group=jenkins
-# ARG uid=800
-# ARG gid=800
-# RUN deluser ${user} 
+ARG user=jenkins
+ARG group=jenkins
+ARG uid=800
+ARG gid=800
+RUN deluser ${user} 
 # RUN delgroup ${group}
-# RUN addgroup -g ${gid} ${group}
-# RUN adduser -h /home/${user} -u ${uid} -G ${group} -D ${user}
-# RUN chown -R ${uid}:${gid} /home/${user}
+RUN addgroup -g ${gid} ${group}
+RUN adduser -h /home/${user} -u ${uid} -G ${group} -D ${user}
+RUN chown -R ${uid}:${gid} /home/${user}
 
 USER ${user}
 
