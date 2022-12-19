@@ -10,18 +10,18 @@ ARG group=jenkins
 ARG uid=800
 ARG gid=800
 RUN deluser ${user} 
-RUN delgroup ${group}
+# RUN delgroup ${group}
 RUN addgroup -g ${gid} ${group}
 RUN adduser -h /home/${user} -u ${uid} -G ${group} -D ${user}
 RUN chwown -R ${uid}:${gid} /home/${user}
 
-USER ${uid}:${gid}
+USER ${user}
 
 ENV MAVEN_CONFIG=/home/${user}/.m2
 
 # create dirs
 RUN ls -l -n -R /home
-RUN id -u
+RUN id
 RUN mkdir ${MAVEN_CONFIG} 
 RUN mkdir ${MAVEN_CONFIG}/repository
 
