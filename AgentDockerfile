@@ -5,6 +5,8 @@ USER root
 RUN apk add --update --no-cache gpg maven
 
 # Set user and group
+ARG user= jenkins
+ARG group= jenkins
 ARG uid=800
 ARG gid=800
 RUN deluser ${user} 
