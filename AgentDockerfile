@@ -23,7 +23,7 @@ ENV MAVEN_CONFIG=/home/${user}/.m2
 RUN ls -l -n -R /home
 RUN id -u
 RUN mkdir ${MAVEN_CONFIG} 
-&& mkdir ${MAVEN_CONFIG}/repository
+RUN mkdir ${MAVEN_CONFIG}/repository
 
 # set volumes
 VOLUME /home/${user}
