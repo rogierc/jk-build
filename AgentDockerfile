@@ -1,8 +1,8 @@
-FROM jenkins/agent:4.13.3-2-alpine3.16-jdk8
-
 # Set user and group
 ARG uid=800
 ARG gid=800
+
+FROM jenkins/agent:4.13.3-2-alpine3.16-jdk8
 
 # Install additional packages
 USER root
