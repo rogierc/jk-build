@@ -27,5 +27,6 @@ RUN mkdir ${MAVEN_CONFIG}/repository
 
 # set volumes
 VOLUME /home/${user}
+VOLUME /home/${user}/agent
 VOLUME ${MAVEN_CONFIG}/repository
 VOLUME /var/lib/jenkins_keys
