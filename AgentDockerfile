@@ -18,7 +18,8 @@ ENV JENKINS_KEYS /var/lib/jenkins_keys
 ENV GNUPGHOME "${JENKINS_KEYS}/.gnupg"
 
 # create dirs
-RUN ls -l /home
+RUN ls -l /home/jenkins
+RUN id -u
 RUN mkdir ${MAVEN_CONFIG} && mkdir ${MAVEN_CONFIG}/repository
 
 # set volumes
