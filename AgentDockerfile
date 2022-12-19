@@ -5,8 +5,8 @@ USER root
 RUN apk add --update --no-cache gpg maven
 
 # Set user and group
-ARG user= jenkins
-ARG group= jenkins
+ARG user=jenkins
+ARG group=jenkins
 ARG uid=800
 ARG gid=800
 RUN deluser ${user} 
@@ -17,13 +17,15 @@ RUN chwown -R ${uid}:${gid} /home/${user}
 
 USER ${uid}:${gid}
 
+ENV MAVEN_CONFIG=/home/${user}/.m2
 
 # create dirs
 RUN ls -l -n -R /home
 RUN id -u
-RUN mkdir ${MAVEN_CONFIG} && mkdir ${MAVEN_CONFIG}/repository
+RUN mkdir ${MAVEN_CONFIG} 
+&& mkdir ${MAVEN_CONFIG}/repository
 
 # set volumes
 VOLUME /home/${user}
-VOLUME /home/${user}/.m2/repository
+VOLUME ${MAVEN_CONFIG}/repository
 VOLUME /var/lib/jenkins_keys
