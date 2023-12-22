@@ -15,8 +15,7 @@ pipeline
         dockerfile
         {
             filename 'AgentDockerfile'
-            args  ' --network sonar_network --volume jenkins_keys:/var/lib/jenkins_keys --volume "jenkinsagent_m2repo:/home/jenkins/.m2/repository '
-        }
+            args '--network sonar_network --volume jenkins_keys:/var/lib/jenkins_keys --volume "jenkinsagent_m2repo:/home/jenkins/.m2/repository' }
     }
     options
     { 
@@ -57,7 +56,7 @@ pipeline
             }
             steps
             {
-                sh 'mvn -X -B -s $MVN_SETTINGS verify sonar:sonar -Psonar'
+                sh 'mvn -B -s $MVN_SETTINGS verify sonar:sonar -Psonar'
             }
         }
         stage('verify and deploy')
