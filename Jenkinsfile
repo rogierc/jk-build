@@ -57,7 +57,7 @@ pipeline
             }
             steps
             {
-                sh 'mvn -B -s $MVN_SETTINGS verify sonar:sonar -Psonar'
+                sh 'mvn -X -B -s $MVN_SETTINGS verify sonar:sonar -Psonar'
             }
         }
         stage('verify and deploy')

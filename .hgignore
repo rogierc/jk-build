@@ -5,3 +5,5 @@ syntax: regexp
 ^\.classpath$
 syntax: regexp
 ^target$
+syntax: regexp
+^bin$
