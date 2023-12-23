@@ -56,15 +56,7 @@ pipeline
             }
             steps
             {
-                sh 'mvn -s $MVN_SETTINGS help:evaluate -Dexpression=sonar.login'
-                sh '''
-                	mvn sonar:sonar \
-  					-Dsonar.projectKey=jk-build \
-  					-Dsonar.scm.disabled=true \
-  					-Dsonar.host.url=http://sonar:9000 \
-  					-Dsonar.login=d22fb96c69714a954d58ed2b865324543e9f3a1e
-  				'''
-                sh 'mvn -B -s $MVN_SETTINGS verify sonar:sonar -Psonar -Dsonar.projectKey=jk-build'
+                sh 'mvn -B -s $MVN_SETTINGS verify sonar:sonar -Psonar'
             }
         }
         stage('verify and deploy')
