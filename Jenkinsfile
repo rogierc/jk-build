@@ -56,7 +56,7 @@ pipeline
             }
             steps
             {
-                sh 'mvn help:evaluate -Dexpression=sonar.projectKey'
+                sh 'mvn help:evaluate -Dexpression=sonar.login'
                 sh '''
                 	mvn sonar:sonar \
   					-Dsonar.projectKey=jk-build \
