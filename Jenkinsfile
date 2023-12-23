@@ -56,6 +56,7 @@ pipeline
             }
             steps
             {
+                sh 'mvn help:evaluate -Dexpression=project.artefactId'
                 sh '''
                 	mvn sonar:sonar \
   					-Dsonar.projectKey=jk-build \
