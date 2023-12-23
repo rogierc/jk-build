@@ -43,8 +43,6 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<californium.version>2.0.0</californium.version>
-		<sonar.projectKey>${project.artifactId}</sonar.projectKey>
-		<sonar.verbose>true</sonar.verbose>
 	</properties>
 	<scm>
 		<connection>scm:git:https://github.com/rogierc/jk-build.git</connection>
