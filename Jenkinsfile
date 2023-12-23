@@ -56,6 +56,7 @@ pipeline
             }
             steps
             {
+                sh 'curl http://sonar:9000/'
                 sh 'mvn -B -s $MVN_SETTINGS verify sonar:sonar -Psonar'
             }
         }
