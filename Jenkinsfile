@@ -56,9 +56,8 @@ pipeline
             }
             steps
             {
-                sh 'curl -v -u b16790e40cd9c43caa39472fe850704df8ccc07c: http://sonar:9000/api/project_links/search?projectKey=test'
                 sh '''
-                mvn sonar:sonar \
+                	mvn sonar:sonar \
   					-Dsonar.projectKey=jk-build \
   					-Dsonar.scm.disabled=true \
   					-Dsonar.host.url=http://sonar:9000 \
