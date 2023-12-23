@@ -57,6 +57,12 @@ pipeline
             steps
             {
                 sh 'curl -v -u b16790e40cd9c43caa39472fe850704df8ccc07c: http://sonar:9000/api/project_links/search?projectKey=test'
+                sh '''
+                mvn sonar:sonar \
+  					-Dsonar.projectKey=test \
+  					-Dsonar.host.url=http://192.168.0.20:9000 \
+  					-Dsonar.login=7017dba0e13c0a317d98335884a32c875a782c3a
+  				'''
                 sh 'mvn -B -s $MVN_SETTINGS verify sonar:sonar -Psonar'
             }
         }
