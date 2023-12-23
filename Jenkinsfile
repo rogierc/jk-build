@@ -60,7 +60,7 @@ pipeline
                 sh '''
                 mvn sonar:sonar \
   					-Dsonar.projectKey=test \
-  					-Dsonar.host.url=http://192.168.0.20:9000 \
+  					-Dsonar.host.url=http://sonar:9000 \
   					-Dsonar.login=7017dba0e13c0a317d98335884a32c875a782c3a
   				'''
                 sh 'mvn -B -s $MVN_SETTINGS verify sonar:sonar -Psonar'
