@@ -60,6 +60,7 @@ pipeline
                 sh '''
                 mvn sonar:sonar \
   					-Dsonar.projectKey=test \
+  					-Dsonar.scm.disabled=true \
   					-Dsonar.host.url=http://sonar:9000 \
   					-Dsonar.login=7017dba0e13c0a317d98335884a32c875a782c3a
   				'''
