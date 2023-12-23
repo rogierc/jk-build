@@ -63,7 +63,7 @@ pipeline
   					-Dsonar.host.url=http://sonar:9000 \
   					-Dsonar.login=d22fb96c69714a954d58ed2b865324543e9f3a1e
   				'''
-                sh 'mvn -B -s $MVN_SETTINGS verify sonar:sonar -Psonar'
+                sh 'mvn -X -B -s $MVN_SETTINGS verify sonar:sonar -Psonar'
             }
         }
         stage('verify and deploy')
