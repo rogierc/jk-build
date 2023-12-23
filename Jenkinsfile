@@ -56,7 +56,7 @@ pipeline
             }
             steps
             {
-                sh 'curl -u b16790e40cd9c43caa39472fe850704df8ccc07c: http://sonar:9000/api/projects/license_usage'
+                sh 'curl -v -u b16790e40cd9c43caa39472fe850704df8ccc07c: http://sonar:9000/api/projects/license_usage'
                 sh 'mvn -B -s $MVN_SETTINGS verify sonar:sonar -Psonar'
             }
         }
