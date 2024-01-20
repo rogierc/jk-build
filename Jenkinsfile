@@ -76,13 +76,7 @@ pipeline
             }
             steps
             {
- 				withCredentials([file(credentialsId: 'hgrc.txt', variable: 'HGRC')])
- 				{
-		   			sh '''
-		   				ln -s $HGRC ~/.hcrc
-               			mvn -B -s $MVN_SETTINGS release:prepare
-               		'''
-               	}
+		   		sh 'mvn -B -s $MVN_SETTINGS release:prepare'
             }
         }
         stage('release-perform')

@@ -127,6 +127,7 @@
 				<version>2.5.3</version>
 				<configuration>
 					<username>${release.user}</username>
+					<password>${release.password}</password>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<useReleaseProfile>false</useReleaseProfile>
 					<releaseProfiles>release</releaseProfiles>
