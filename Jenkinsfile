@@ -32,8 +32,6 @@ pipeline
             steps
             {
                sh '''
-                git config user.email "jenkins@teslanet.nl"
-                git config user.name "jenkins"
                 mvn -B -s $MVN_SETTINGS release:clean
                 '''
             }
