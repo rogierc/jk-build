@@ -3,7 +3,7 @@ FROM maven:3.9.6-eclipse-temurin-8-alpine
 #add packages
 #libgcc adds cyphersuites not available in alpine by default
 #shadow adds useradd and groupadd
-RUN apk --update-cache add libgcc shadow git gpg gpg-agent && apk cache clean
+RUN apk --update-cache add libgcc shadow hg git gpg gpg-agent && apk cache clean
 
 ENV JENKINS_HOME /home/jenkins
 ENV JENKINS_KEYS /var/lib/jenkins_keys
@@ -24,6 +24,8 @@ USER ${uid}:${gid}
 
 RUN mkdir /home/jenkins/.m2 \
     && mkdir /home/jenkins/.m2/repository
+    
+COPY hgrc.txt /home/jenkins/.hgrc
 
 #set volumes
 VOLUME /home/jenkins
