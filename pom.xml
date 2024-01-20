@@ -45,9 +45,9 @@
 		<californium.version>2.0.0</californium.version>
 	</properties>
 	<scm>
-		<connection>scm:git:https://github.com/rogierc/jk-build.git</connection>
-		<developerConnection>scm:git:https://github.com/rogierc/jk-build.git</developerConnection>
-		<url>http://github.com/rogierc/jk-build/tree/master</url>
+		<connection>${jk-build.connection}</connection>
+		<developerConnection>${jk-build.developerConnection}</developerConnection>
+		<url>${jk-build.url}</url>
 		<tag>HEAD</tag>
 	</scm>
 	<distributionManagement>
@@ -55,10 +55,6 @@
 			<id>ossrh</id>
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
 	</distributionManagement>
 
 	<build>
