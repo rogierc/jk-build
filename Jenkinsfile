@@ -31,9 +31,13 @@ pipeline
             }
             steps
             {
-               sh '''
-                mvn -B -s $MVN_SETTINGS release:clean
-                '''
+ 				withCredentials([file(credentialsId: 'hgrc.txt', variable: 'HGRC')])
+ 				{
+		   			sh '''
+		   				cp $HGRC ~/.hcrc
+		                mvn -B -s $MVN_SETTINGS release:clean
+	                '''
+                }
             }
         }
         stage('build')

@@ -24,8 +24,6 @@ USER ${uid}:${gid}
 
 RUN mkdir /home/jenkins/.m2 \
     && mkdir /home/jenkins/.m2/repository
-    
-COPY hgrc.txt /home/jenkins/.hgrc
 
 #set volumes
 VOLUME /home/jenkins
