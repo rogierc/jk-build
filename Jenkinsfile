@@ -15,7 +15,7 @@ pipeline
         dockerfile
         {
             filename 'AgentDockerfile'
-            args '--network sonar_network --volume jenkins_keys:/var/lib/jenkins_keys --volume "jenkinsagent_m2repo:/home/jenkins/.m2/repository' }
+            args '--network sonar_network --volume jenkins_keys:/var/lib/jenkins_keys --volume jenkinsagent_m2repo:/home/jenkins/.m2/repository --add-host $REPO_ALIAS' }
     }
     options
     { 
@@ -40,7 +40,10 @@ pipeline
         {
             steps
             {
-                sh 'mvn -B -s $MVN_SETTINGS clean package -DskipTests'
+                sh '''
+               		echo REPO $REPO_ALIAS
+                	mvn -B -s $MVN_SETTINGS clean package -DskipTests
+                '''
             }
         }
         stage('verify')
